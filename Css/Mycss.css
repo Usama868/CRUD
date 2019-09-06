@@ -1,0 +1,254 @@
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 1, 2019, 2:04:37 AM
+    Author     : Usama Taj Khan
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 31, 2019, 3:52:44 AM
+    Author     : DIT STAT
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 30, 2019, 4:07:11 AM
+    Author     : DIT STAT
+*/
+
+ .dropdown-menu a:hover{
+    color: #4266B3;
+}
+.headnav{
+    
+    float: right;
+   margin-top: -27px;
+   margin-right: 200px;
+}
+.headnav label{
+    
+    margin-left: 5px;
+}
+.headnav a{
+   text-decoration: none;
+    font-size: 12px;
+    color: white;
+}
+.headnav a:hover{
+    color:gray;
+   background-color: #3C5CA0;
+}
+
+.headnav span{
+    color: #0E385F;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.headnav span:hover{
+    color: white;
+}
+
+.caret1{
+    
+    font-size: 15px;
+    width: 11px;
+    height: 10px;
+}
+
+.headnav img{
+    margin-top: -1px;
+   margin-right: -1px;
+    width: 35px;
+    height: 30px;
+}
+.bgcolor{
+    
+    background-color: #E9EBEE;
+}
+.header-control{
+    overflow: visible;
+    top: 0;
+    left: 0;
+   position: fixed;
+    background-color: #4266B3;
+  width: 100%;
+    height: 42px ;
+    margin-left: auto;
+    margin-right: auto;;
+}
+.align-control{
+    width: 980px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image-control{
+ float: left;  
+
+}
+.logo{
+    margin-left: -120px;
+    margin-right: 100px;
+    padding-left: 7px;
+   background-color: white;
+     width:20px;
+    height: 22px;
+    color: #365899;
+    font-size: 25px;
+    font-family: sans-serif;
+    margin-top: 10px;
+    float: left;
+    padding-bottom:10px;
+    text-decoration: none;
+}
+.searchbar{
+    padding-left: 5px;
+    font-family: Arial;
+    margin-top: 8px;
+    width: 400px;
+    height: 27px;
+    border: none;
+    border: 2px solid #365899;
+    margin-left:-97px;
+}
+.btnsearch{
+ border: none;
+    margin-left:-32px;
+    padding-bottom: -12px;
+    padding-top: -10px;
+   background-color: white;
+    width: 26px;
+    height: 23px;
+        
+     
+  
+}
+.content-c{
+   
+      width: 1000px;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.left{
+    
+   
+      float: left;
+    margin-top: 20px;
+    font-family: Arial;
+    color: #0E385F;
+    width: 980px; 
+    
+}
+
+
+
+    
+.left a{
+    margin-left: 10px;
+    
+}
+.left img{
+   margin-right: -2px; 
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar {
+    
+    list-style-type: none;
+    margin-left: -128px;
+    margin-top: 45PX;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  left: 1;
+  background-color:  #E9EBEE;
+  overflow-x: hidden;
+  padding-top: 10px;
+  
+}
+.left li{
+    margin-left: 20px;
+    width: 200px;
+ 
+}
+.left h5{
+    margin-left: 27px;
+    color: grey;
+}
+
+.sidebar a:hover{
+    border: 1px solid gray;
+  
+   background-color: #F5F6F7;
+}
+.active{
+   
+border-radius: 3px;
+  border: 1px solid grey;
+    font-style: inherit;
+    background-color: #F5F6F7;
+    color: black;
+}
+.sidebar a{
+    border-radius: 3px;
+    text-align: center;
+    padding-right: 60px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  color: black;
+  font-family: arial;
+    text-decoration: none;
+}
+.right{
+    
+   
+  
+      float: right;
+    
+    font-family: Arial;
+    color: #0E385F;
+}
+
+.center{
+    
+    width: 600PX;
+    height: auto;
+    margin-top: 30px;
+}
+.topb1{
+  
+ 
+   
+  
+  
+  
+  
+    background-color: white;
+}
+.ad1{
+    
+    
+    
+    margin-top: 50px;
+    margin-right: -250px;
+}
+.ad1 img{
+    margin-top: 10px;
+}

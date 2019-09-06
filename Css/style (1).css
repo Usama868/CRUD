@@ -1,0 +1,246 @@
+    /*Usama Taj Khan*/
+
+    .bar{
+        background-color:#3C5A99;
+        padding-bottom:px;
+        
+    }   
+    .glyp{
+      
+           
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+.head{
+    
+  
+   position: relative;
+   height: 20%;
+   
+      max-width: 100%;
+        margin-top: 10px;
+    
+}
+.copyright{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: 70%;
+        
+}
+.H1{
+   
+    
+   
+    color: whitesmoke;
+    font-family: verdana;
+    font-size: 40px;
+ 
+    
+    
+    
+    
+}
+.font{
+    font-family: impact;
+}
+ 
+.body{
+    background-image: url("images/fabric1.png");
+    color: white;
+    font-family: verdana;
+    
+}  
+                                                                                                                    /*Usama Taj Khan*/
+        
+
+.side{
+    background-color: forestgreen;
+    color:2px powderblue; 
+    
+}
+
+
+.bold{
+    font-family: fantasy;
+  
+}
+.impact{
+    text-decoration: blink;
+    text-align: center;
+    font-family: impact; 
+    color: black; 
+}
+.Lucida Console{
+    color: blue;
+}
+
+ 
+    
+/*Reset & submit button hover style  */
+input[type=submit]:hover { background-color: forestgreen ; color: orange;} 
+
+input[type=reset]:hover { background-color: forestgreen; color: orange;}
+
+/* reset & sumbit button background color  */
+
+input[type=submit] {background-color: #4CAF50; color: whitesmoke;  } 
+
+input[type=reset]{background-color: #4CAF50; color: white; } 
+
+
+                                                                                                                                        /*Usama Taj Khan*/
+
+.ok{
+    background-color: forestgreen ;
+        color: white;
+        width: 5%;
+        border: black;
+        overflow: auto;
+        position: relative;
+        padding: 4.5px;
+        margin: auto;
+}
+.buttoni{
+    
+     padding: 5px;
+     width: 80px;
+  
+   border:  #4CAF50;
+
+   display: inline;
+   text-align: center;
+  
+}
+.button{
+    
+       margin-top: 5px;
+       max-width: 100%;
+                                                                                                                                   /*Usama Taj Khan*/
+    position: relative;
+    overflow: auto;
+    width: 100%;
+  
+}
+.Tmargin{
+    border: 1px powderblue;
+   max-width: 100%;
+   max-height: 100%;
+  width: 850px;
+  height: 500px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+
+
+
+.my{
+    color: black;
+    background-image: url("images/fabric.png");
+     padding-top: 10px ;
+    padding-bottom: 10px ;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;                                                                                                       /*Usama Taj Khan*/
+    width: 20%;
+    height: 10%;
+}
+
+.navbar {
+    margin-top: 10px;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+  position: relative;
+  top: 0; /* Stay on top */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+.navbar a {
+  float: left   ;                                                                                                                         /*Usama Taj Khan*/
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 10%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: goldenrod;
+}
+
+.navbar a.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+.td{
+    
+    position: relative;
+    font-family: fantasy;
+    font-size: 15px;
+    margin-left: 0px;                                                                                                    /*Usama Taj Khan*/
+    width: 30%;
+    color: dodgerblue;
+    text-align: left;
+    background-color: whitesmoke;
+    padding-top: 5px ;
+    padding-bottom: 5px ;
+    padding-left: 5px;
+    padding-right: 10px;
+  
+    
+}
+    
+.navmargin{
+    margin-bottom: 30px;
+    margin-top: 10px;
+    
+}
+.btnm{
+        
+    margin-right: 20px;
+      padding: 5px;
+     width: 80px;
+   display: inline;
+   text-align: center;
+   color: snow;
+  
+
+  
+      
+}
+
+.test{
+    margin-bottom: 30px;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+                                                                                                                                    /*Usama Taj Khan*/

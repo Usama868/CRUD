@@ -1,0 +1,151 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 31, 2019, 3:52:44 AM
+    Author     : DIT STAT
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 30, 2019, 4:07:11 AM
+    Author     : DIT STAT
+*/
+.headnav{
+    float: right;
+   margin-top: -27px;
+   margin-right: 370px;
+}
+.headnav label{
+    
+    margin-left: 5px;
+}
+.headnav a{
+   text-decoration: none;
+    font-size: 12px;
+    color: white;
+}
+.headnav span{
+    color: #0E385F;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.caret1{
+    
+    font-size: 15px;
+    width: 11px;
+    height: 10px;
+}
+
+.headnav img{
+    margin-top: -1px;
+   margin-right: -1px;
+    width: 35px;
+    height: 30px;
+}
+.header-control{
+   
+    background-color: #3B5998;
+  width: 100%;
+    height: 50px ;
+}
+.align-control{
+    width: 980px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image-control{
+ float: left;  
+
+}
+.logo{
+    padding-left: 7px;
+   background-color: white;
+     width:20px;
+    height: 22px;
+    color: #365899;
+    font-size: 25px;
+    font-family: sans-serif;
+    margin-top: 14px;
+    float: left;
+    padding-bottom:10px;
+    text-decoration: none;
+}
+.searchbar{
+    padding-left: 5px;
+    font-family: Arial;
+    margin-top: 12px;
+    width: 250px;
+    height: 27px;
+    border: none;
+    border: 2px solid #365899;
+    margin-left:-1px;
+}
+.btnsearch{
+ border: none;
+    margin-left:-32px;
+    padding-bottom: -12px;
+    padding-top: -10px;
+   background-color: white;
+    width: 26px;
+    height: 23px;
+        
+     
+  
+}
+.content-c{
+      width: 1000px;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.left{
+      float: left;
+    margin-top: 20px;
+    font-family: Arial;
+    color: #0E385F;
+    width: 1000px; 
+    
+}
+
+
+    
+.left img{
+   margin-right: -15px; 
+    width: 70px;
+    height: 60px;
+}
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+
+.liststyle{
+    list-style-type: none;
+    text-decoration: none;
+}
+.right{
+      float: right;
+    
+    font-family: Arial;
+    color: #0E385F;
+}
+
+
+ 
