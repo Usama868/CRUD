@@ -3,11 +3,11 @@
 require_once "connect.php";
  
 // Define variables and initialize with empty values
-$name= $fathername= $contactno = $cnic = "";
-$name_err = $fathername_err = $contactno_err = $cnic_err =  "";
+$name= $fathername= $contact = $cnic = "";
+$name_err = $fathername_err = $contact_err = $cnic_err =  "";
  
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] === "POST"){
     // Validate name
     $input_name = trim($_POST["name"]);
     if(empty($input_name)){
@@ -51,11 +51,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($name_err) && empty($fathername_err) && empty($contact_err && empty($cnic_err))){
         // Prepare an insert statement
-        $sql = "INSERT INTO form (name, fathername, contact,cnic) VALUES (?, ?, ?,?)";
+        $sql = "INSERT INTO 'form' (id,name, fathername, contact,cnic) VALUES (null,$name, $fathername, $contact,$cnic)";
          
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_fathername, $param_contact, $param_cnic);
+            mysqli_stmt_bind_param($stmt, "ssii", $param_name, $param_fathername, $param_contact, $param_cnic);
             
             // Set parameters
             $param_name = $name;
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                // Records created successfully. Redirect to landing page
+                //Records created successfully. Redirect to landing page
                 header("location: index.php");
                 exit();
             } else{
@@ -106,17 +106,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
     
     </head>
-    <body class="background container" background="images/fabric1.png">
+    <body class="background container" background="images/email-pattern.png">
         
         
         <nav class="col-md-6 navmargin">
             
             <div class="">
             <ul class="nav navbar-nav nav-pills">
-                <li class="active"><a href="form.php" target="_self">Home</a></li>
-                <li><a href="index.php" target="_self">SELECT</a></li>
-                <li><a href="update.php" target="_self">UPDATE</a></li>
-                <li><a href="read.php" target="_self">READ</a></li>
+                <li class="active"><a href="index.php" target="_self">Home</a></li>
+              
+               
+               
                 
             </ul>
         </div>
@@ -128,40 +128,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      
       
         <div class="col-md-12">
-            <h2>Create Record</h2>
-                   <p>Please fill this form and submit to add User record to the database.</p>
+            <h2 class="green">Create Record</h2>
+            <p class="gray">Please fill this form and submit to add User record to the database.</p>
                    <br/>
                    
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            
-            
+          
             <div class="form-group">
-                <label class="col-md-2" for=Name">Name</label>
+                <div class="<?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                <label class="col-md-2 black" for=Name">Name</label>
+                
                 <div class="col-md-4">
-                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name">
+                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name" required="" value="<?php echo $name; ?>">
+                    <span class="help-block"><?php echo $name_err;?></span>
                 </div>
-                <label class="col-md-2" for="fname">Father Name</label>
-                <div class="col-md-4">
-                    <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name">
                 </div>
-                <label class="col-md-2" for="contact">Contact</label>
+                
+                <div class="<?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
+                <label class="col-md-2 black" for="fname">Father Name</label>
                 <div class="col-md-4">
-                    <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no">
+                    <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name" required="" value="<?php echo $fathername; ?>">
+                      <span class="help-block"><?php echo $fathername_err;?></span>
                 </div>
-                  <label class="col-md-2" for="cnic">CNIC No</label>
+                </div>
+                
+                <Div class="<?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
+                    <label class="col-md-2 black" for="contact">Contact</label>
                 <div class="col-md-4">
-                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control">
+                    <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" required="" value="<?php echo $contact; ?>">
+                      <span class="help-block"><?php echo $contact_err;?></span>
+                </div>
+                </div>
+                
+                <div class="<?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
+                  <label class="col-md-2 black" for="cnic">CNIC No</label>
+                <div class="col-md-4">
+                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" required="" value="<?php echo $cnic; ?>">
+                      <span class="help-block"><?php echo $cnic_err;?></span>
                     
                  </div>
-               
                 </div>
-                <div class=" col-md-12 btnm">
+                </div>
+                <div class="btnm">
                 <diV>
-                 <button type="submit" class="btn btn-primary btnm">Submit   </button>
+                 <button type="submit" class="btn btn-success btnm">Submit   </button>
           
              
       
-                    <button type="reset" class="btn btn-primary btn-danger btnm   "> Reset  </button> 
+                    <button type="reset" class="btn btn-primary btn-danger btnm   "> Reset  </button>
+                    <a href="index.php" class="btn btn-warning btnm">Cancel</a>
                 </div> 
             </div>
                    </form>

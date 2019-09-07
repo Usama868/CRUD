@@ -43,10 +43,10 @@
             
             <div class="">
             <ul class="nav navbar-nav nav-pills">
-                <li class="active"><a href="create.php" target="_self">Home</a></li>
-                <li><a href="index.php" target="_self">SELECT</a></li>
-                <li><a href="update.php" target="_self">UPDATE</a></li>
-                <li><a href="read.php" target="_self">READ</a></li>
+                <li class="active"><a href="index.php" target="_self">Home</a></li>
+              
+               
+               
                 
             </ul>
         </div>
