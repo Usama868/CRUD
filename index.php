@@ -24,7 +24,7 @@
         </div>
     <style type="text/css">
         .wrapper{
-            width: 850px;
+            width: 950px;
             margin: 0 auto;
         }
         .page-header h2{
