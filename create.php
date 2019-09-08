@@ -179,7 +179,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
           
              
       
-                    <button type="reset" class="btn btn-primary btn-danger btnm   "> Reset  </button>
+                   
                     <a href="index.php" class="btn btn-warning btnm">Cancel</a>
                 </div> 
             </div>
