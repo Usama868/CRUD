@@ -24,7 +24,7 @@
         </div>
     <style type="text/css">
         .wrapper{
-            width: 800px;
+            width: 850px;
             margin: 0 auto;
         }
         .page-header h2{
@@ -39,21 +39,23 @@
             $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
-     <nav class="col-md-6 navmargin">
+    
+</head>
+<body class="container" background="images/email-pattern.png">
+    <nav class="col-md-6 navmargin">
             
             <div class="">
-            <ul class="nav navbar-nav nav-pills">
+            <ul class="nav nav-divider nav-pills">
                 <li class="active"><a href="index.php" target="_self">Home</a></li>
-              
+                <li><a href="#" target="_self">ADD</a></li>
+                <li><a href="update.php" target="_self">Update</a></li>
+                
                
                
                 
             </ul>
         </div>
         </nav>
-</head>
-<body class="container" background="images/email-pattern.png">
-   
      
     <div class="wrapper">
         <div class="container-fluid">
@@ -90,7 +92,7 @@
                                         echo "<td style='color:black'>" . $row['fathername'] . "</td>";
                                         echo "<td style='color:black'>" . $row['contact'] . "</td>";
                                         echo "<td style='color:black'>" . $row['cnic'] . "</td>";
-                                        echo "<td style='color:blue'>";
+                                        echo "<td align='center'>";
                                             echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-info glyphicon glyphicon-eye-open'></span></a>";
                                             echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-pencil'></span></a>";
                                             echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='btn btn-danger glyphicon glyphicon-trash'></span></a>";

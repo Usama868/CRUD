@@ -92,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         <script src = "jqueryUi/jquery1.10.2-js.js" type="text/javascript"></script>
         <script src = "jqueryUi/jquery-ui-js.js" type="text/javascript"></script>
           <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-        <title>25-7-19</title>
+        <title>ADD USER</title>
         <script src = "script/jquery-min-js.js"></script>
         <script src = "script/bootstap-min-js.js"></script>
                   <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet" type="text/css">
@@ -106,14 +106,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         </div>
     
     </head>
-    <body class="background container" background="images/email-pattern.png">
+    <body class="container" background="images/email-pattern.png">
         
         
         <nav class="col-md-6 navmargin">
             
             <div class="">
-            <ul class="nav navbar-nav nav-pills">
+            <ul class="nav nav-divider  nav-pills">
                 <li class="active"><a href="index.php" target="_self">Home</a></li>
+                <li><a href="#" target="_self">ADD</a></li>
+                <li><a href="update.php" target="_self">Update</a></li>
               
                
                

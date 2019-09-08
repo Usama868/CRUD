@@ -169,9 +169,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
       <nav class="col-md-6 navmargin">
             
             <div class="">
-            <ul class="nav navbar-nav nav-pills">
+            <ul class="nav  nav-pills">
                 <li class="active"><a href="index.php" target="_self">Home</a></li>
-              
+               <li><a href="#" target="_self">ADD</a></li>
+                <li><a href="update.php" target="_self">Update</a></li>
                
                
                 
