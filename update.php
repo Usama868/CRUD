@@ -1,10 +1,10 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "connect.php";
  
 // Define variables and initialize with empty values
-$name = $address = $salary = "";
-$name_err = $address_err = $salary_err = "";
+$name= $fathername= $contact = $cnic = "";
+$name_err = $fathername_err = $contact_err = $cnic_err =  "";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
@@ -21,37 +21,50 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $name = $input_name;
     }
     
-    // Validate address address
-    $input_address = trim($_POST["address"]);
-    if(empty($input_address)){
-        $address_err = "Please enter an address.";     
+    // Validate fname
+    $input_fathername = trim($_POST["fathername"]);
+    if(empty($input_fathername)){
+        $fathername_err = "Please enter an father Name.";
+    } elseif(!filter_var($input_fathername, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+        $fathername_err = "Please enter a valid father name.";
     } else{
-        $address = $input_address;
+        $fathername = $input_fathername;
     }
     
-    // Validate salary
-    $input_salary = trim($_POST["salary"]);
-    if(empty($input_salary)){
-        $salary_err = "Please enter the salary amount.";     
-    } elseif(!ctype_digit($input_salary)){
-        $salary_err = "Please enter a positive integer value.";
+    // Validate contact
+    $input_contact = trim($_POST["contact"]);
+    if(empty($input_contact)){
+        $contact_err = "Please enter the Correct no.";     
+    } elseif(!ctype_digit($input_contact)){
+        $contact_err = "Please enter a correct format.";
     } else{
-        $salary = $input_salary;
+        $contact = $input_contact;
+       
+    }
+     //cnic no 
+    $input_cnic = trim($_POST["cnic"]);
+    if(empty($input_cnic)){
+        $cnic_err = "Please enter the Correct cnic no.";     
+    } elseif(!ctype_digit($input_cnic)){
+        $cnic_err = "Please enter a correct format.";
+    } else{
+      $cnic = $input_cnic;
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($address_err) && empty($salary_err)){
+    if(empty($name_err) && empty($fathername_err) && empty($contact_err) && empty($cnic_err)){
         // Prepare an update statement
-        $sql = "UPDATE employees SET name=?, address=?, salary=? WHERE id=?";
+        $sql = "UPDATE form SET name=?, fathername=?, contact=?, cnic=? WHERE id=?";
          
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssi", $param_name, $param_address, $param_salary, $param_id);
+            mysqli_stmt_bind_param($stmt, "ssiii", $param_name, $param_fathername, $param_contact, $param_cnic, $param_id);
             
             // Set parameters
             $param_name = $name;
-            $param_address = $address;
-            $param_salary = $salary;
+            $param_fathername = $fathername;
+            $param_contact = $contact;
+            $param_cnic = $cnic;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -69,7 +82,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
     
     // Close connection
-    mysqli_close($link);
+    mysqli_close($connect);
 } else{
     // Check existence of id parameter before processing further
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
@@ -77,8 +90,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM employees WHERE id = ?";
-        if($stmt = mysqli_prepare($link, $sql)){
+        $sql = "SELECT * FROM form WHERE id = ?";
+        if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
             
@@ -96,8 +109,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     
                     // Retrieve individual field value
                     $name = $row["name"];
-                    $address = $row["address"];
-                    $salary = $row["salary"];
+                    $fathername = $row["fathername"];
+                    $contact = $row["contact"];
+                    $cnic = $row["cnic"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -113,7 +127,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_stmt_close($stmt);
         
         // Close connection
-        mysqli_close($link);
+        mysqli_close($connect);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");
@@ -126,6 +140,22 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href = "jqueryUi/jquery-ui-lightness.css" type="text/css" rel = "stylesheet">
+        <script src = "jqueryUi/jquery1.10.2-js.js" type="text/javascript"></script>
+        <script src = "jqueryUi/jquery-ui-js.js" type="text/javascript"></script>
+          <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>25-7-19</title>
+        <script src = "script/jquery-min-js.js"></script>
+        <script src = "script/bootstap-min-js.js"></script>
+                  <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet" type="text/css">
+                  <link href = "Css/style.css" rel = "stylesheet" type="text/css">
+                  <link rel="stylesheet" type="text/css" href="Css/w3.css">
+                  <link rel="stylesheet" type="text/css" href="Css/colors.css">
+            <div class="head img-responsive">
+           
+            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
+         
+        </div>
     <title>Update Record</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
@@ -135,38 +165,80 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
     </style>
 </head>
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
+<body class=" container" background="images/email-pattern.png">
+      <nav class="col-md-6 navmargin">
+            
+            <div class="">
+            <ul class="nav navbar-nav nav-pills">
+                <li class="active"><a href="index.php" target="_self">Home</a></li>
+              
+               
+               
+                
+            </ul>
+        </div>
+        </nav>
+    
+   
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2>Update Record</h2>
-                    </div>
-                    <p>Please edit the input values and submit to update the record.</p>
+                        <h2 class="green">Update Record</h2>
+                  
+                    <p class="gray">Please edit the input values and submit to update the record.</p>
+                      </div>
+                    <br/>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
-                            <span class="help-block"><?php echo $name_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control"><?php echo $address; ?></textarea>
-                            <span class="help-block"><?php echo $address_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
-                            <label>Salary</label>
-                            <input type="text" name="salary" class="form-control" value="<?php echo $salary; ?>">
-                            <span class="help-block"><?php echo $salary_err;?></span>
-                        </div>
-                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
-                    </form>
+                        
+                       <div class="form-group">
+                <div class="<?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                <label class="col-md-2 black" for=Name">Name</label>
+                
+                <div class="col-md-4">
+                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name" required="name" value="<?php echo $name; ?>">
+                    <span class="help-block"><?php echo $name_err;?></span>
                 </div>
-            </div>        
-        </div>
-    </div>
+                </div>
+                
+                <div class="<?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
+                <label class="col-md-2 black" for="fname">Father Name</label>
+                <div class="col-md-4">
+                    <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name" required="fathername" value="<?php echo $fathername; ?>">
+                      <span class="help-block"><?php echo $fathername_err;?></span>
+                </div>
+                </div>
+                
+                <Div class="<?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
+                    <label class="col-md-2 black" for="contact">Contact</label>
+                <div class="col-md-4">
+                    <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" required="contact" value="<?php echo $contact; ?>">
+                      <span class="help-block"><?php echo $contact_err;?></span>
+                </div>
+                </div>
+                
+                <div class="<?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
+                  <label class="col-md-2 black" for="cnic">CNIC No</label>
+                <div class="col-md-4">
+                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" required="cnic" value="<?php echo $cnic; ?>">
+                      <span class="help-block"><?php echo $cnic_err;?></span>
+                    
+                 </div>
+                </div>
+                </div>
+               
+                        <div class="btnm">
+                        
+                        <button type="submit" class="btn btn-success btnm">Submit   </button>
+                      
+                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+                        <button class="btn btn-warning btnm"><a href="index.php">Cancel</button></a>
+                        </div>
+                    </form>
+                 </div>
+                   
+         <div class="img-responsive" align="center">
+             
+             <img src="images/copyright.png" class="copyright">
+                        </div>
+    
 </body>
 </html>
