@@ -51,11 +51,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     // Check input errors before inserting in database
     if(empty($name_err) && empty($fathername_err) && empty($contact_err && empty($cnic_err))){
         // Prepare an insert statement
-        $sql = "INSERT INTO 'form' (name, fathername, contact,cnic) VALUES ($name, $fathername, $contact,$cnic)";
+        $sql = "INSERT INTO form (name, fathername, contact,cnic) VALUES (?, ?, ?,?)";
          
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssii ", $param_name, $param_fathername, $param_contact, $param_cnic);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_fathername, $param_contact, $param_cnic);
             
             // Set parameters
             $param_name = $name;
@@ -143,7 +143,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <label class="col-md-2 black" for=Name">Name</label>
                 
                 <div class="col-md-4">
-                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name" required="name" value="<?php echo $name; ?>">
+                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name"  value="<?php echo $name; ?>">
                     <span class="help-block"><?php echo $name_err;?></span>
                 </div>
                 </div>
@@ -151,7 +151,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="<?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
                 <label class="col-md-2 black" for="fname">Father Name</label>
                 <div class="col-md-4">
-                    <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name" required="fathername" value="<?php echo $fathername; ?>">
+                    <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name"  value="<?php echo $fathername; ?>">
                       <span class="help-block"><?php echo $fathername_err;?></span>
                 </div>
                 </div>
@@ -159,7 +159,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <Div class="<?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
                     <label class="col-md-2 black" for="contact">Contact</label>
                 <div class="col-md-4">
-                    <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" required="contact" value="<?php echo $contact; ?>">
+                    <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" value="<?php echo $contact; ?>">
                       <span class="help-block"><?php echo $contact_err;?></span>
                 </div>
                 </div>
@@ -167,7 +167,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="<?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
                   <label class="col-md-2 black" for="cnic">CNIC No</label>
                 <div class="col-md-4">
-                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" required="cnic" value="<?php echo $cnic; ?>">
+                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" value="<?php echo $cnic; ?>">
                       <span class="help-block"><?php echo $cnic_err;?></span>
                     
                  </div>
@@ -195,11 +195,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       
                     
      
-             
+        <div>     
         <div class="img-responsive" align="center">
              
              <img src="images/copyright.png" class="copyright">
                         </div>
+        </div>
     </body>
 </html>
  
