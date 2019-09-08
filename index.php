@@ -24,7 +24,7 @@
         </div>
     <style type="text/css">
         .wrapper{
-            width: 750px;
+            width: 800px;
             margin: 0 auto;
         }
         .page-header h2{
@@ -73,27 +73,27 @@
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class=' table table-bordered table-striped table-responsive table-hover'>";
                                 echo "<thead>";
-                                    echo "<tr>";
+                                    echo "<tr style='color:green; background-color:sandybrown;'>";
                                         echo "<th>Id</th>";
                                         echo "<th>Name</th>";
-                                        echo "<th>father-name</th>";
-                                        echo "<th>contact</th>";
-                                        echo "<th>cnic</th>";
+                                        echo "<th>Father-name</th>";
+                                        echo "<th>Contact</th>";
+                                        echo "<th>Cnic</th>";
                                         echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['fathername'] . "</td>";
-                                        echo "<td>" . $row['contact'] . "</td>";
-                                        echo "<td>" . $row['cnic'] . "</td>";
-                                        echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                    echo "<tr style='background-color:powderblue;'>";
+                                        echo "<td style='color:red'>" . $row['id'] . "</td>";
+                                        echo "<td style='color:black'>" . $row['name'] . "</td>";
+                                        echo "<td style='color:black'>" . $row['fathername'] . "</td>";
+                                        echo "<td style='color:black'>" . $row['contact'] . "</td>";
+                                        echo "<td style='color:black'>" . $row['cnic'] . "</td>";
+                                        echo "<td style='color:blue'>";
+                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-info glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='btn btn-danger glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }
