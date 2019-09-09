@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     // Validate contact
     $input_contact = trim($_POST["contact"]);
     if(empty($input_contact)){
-        $contact_err = "Please enter the Correct no.";     
+        $contact_err = "Please enter the  no.";     
     } elseif(!ctype_digit($input_contact)){
         $contact_err = "Please enter a correct format.";
     } else{
@@ -41,10 +41,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
      //cnic no 
     $input_cnic = trim($_POST["cnic"]);
     if(empty($input_cnic)){
-        $cnic_err = "Please enter the Correct cnic no.";     
-    } elseif(!ctype_digit($input_cnic)){
-        $cnic_err = "Please enter a correct format.";
-    } else{
+        $cnic_err = "Please enter the  cnic no.";     
+    }  else{
       $cnic = $input_cnic;
     }
     
@@ -106,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         </div>
     
     </head>
-    <body class="container" background="images/email-pattern.png">
+    <body class="container" background="images/fabric1.png">
         
         
         <nav class="col-md-6 navmargin">
@@ -131,8 +129,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       
         <div class="col-md-12">
             <div class="page-header">
-            <h2 class="green">Create Record</h2>
-            <p class="gray">Please fill this form and submit to add User record to the database.</p>
+            <h2 class="peru">Create Record</h2>
+            <p class="aqua">Please fill this form and submit to add User record to the database.</p>
             </div>
                    <br/>
                    
@@ -140,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
           
             <div class="form-group">
                 <div class="<?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                <label class="col-md-2 black" for=Name">Name</label>
+                <label class="col-md-2 silver" for=Name">Name</label>
                 
                 <div class="col-md-4">
                     <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name"  value="<?php echo $name; ?>">
@@ -149,7 +147,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 </div>
                 
                 <div class="<?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
-                <label class="col-md-2 black" for="fname">Father Name</label>
+                <label class="col-md-2 silver" for="fname">Father Name</label>
                 <div class="col-md-4">
                     <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name"  value="<?php echo $fathername; ?>">
                       <span class="help-block"><?php echo $fathername_err;?></span>
@@ -157,7 +155,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 </div>
                 
                 <Div class="<?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
-                    <label class="col-md-2 black" for="contact">Contact</label>
+                    <label class="col-md-2 silver" for="contact">Contact</label>
                 <div class="col-md-4">
                     <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" value="<?php echo $contact; ?>">
                       <span class="help-block"><?php echo $contact_err;?></span>
@@ -165,7 +163,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 </div>
                 
                 <div class="<?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
-                  <label class="col-md-2 black" for="cnic">CNIC No</label>
+                  <label class="col-md-2 silver" for="cnic">CNIC No</label>
                 <div class="col-md-4">
                     <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" value="<?php echo $cnic; ?>">
                       <span class="help-block"><?php echo $cnic_err;?></span>

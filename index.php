@@ -20,11 +20,11 @@
             <div class="head img-responsive">
            
             <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
-         
+            
         </div>
     <style type="text/css">
         .wrapper{
-            width: 850px;
+            width: 950px;
             margin: 0 auto;
         }
         .page-header h2{
@@ -41,7 +41,7 @@
     </script>
     
 </head>
-<body class="container" background="images/email-pattern.png">
+<body class="container" background="images/fabric1.png">
     <nav class="col-md-6 navmargin">
             
             <div class="">
@@ -61,9 +61,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class=" page-header clearfix">
+                    <div class="green page-header clearfix">
                         <h2 class="pull-left">User's Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New user</a>
+                        <a href="create.php" class=" btn btn-success pull-right"><span class="black">ADD New User</span></a>
                     </div>
                     <?php
                     // Include config file
@@ -117,5 +117,11 @@
             </div>        
         </div>
     </div>
+     <div>     
+        <div class="img-responsive" align="center">
+             
+             <img src="images/copyright.png" class="copyright">
+                        </div>
+        </div>
 </body>
 </html>

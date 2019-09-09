@@ -45,9 +45,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     $input_cnic = trim($_POST["cnic"]);
     if(empty($input_cnic)){
         $cnic_err = "Please enter the Correct cnic no.";     
-    } elseif(!ctype_digit($input_cnic)){
-        $cnic_err = "Please enter a correct format.";
-    } else{
+    }  else{
       $cnic = $input_cnic;
     }
     
@@ -165,7 +163,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
     </style>
 </head>
-<body class=" container" background="images/email-pattern.png">
+<body class=" container" background="images/fabric1.png">
       <nav class="col-md-6 navmargin">
             
             <div class="">
@@ -183,16 +181,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
    
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2 class="green">Update Record</h2>
+                        <h2 class="peru">Update Record</h2>
                   
-                    <p class="gray">Please edit the input values and submit to update the record.</p>
+                    <p class="aqua">Please edit the input values and submit to update the record.</p>
                       </div>
                     <br/>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         
                        <div class="form-group">
                 <div class="<?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                <label class="col-md-2 black" for=Name">Name</label>
+                <label class="col-md-2 silver" for=Name">Name</label>
                 
                 <div class="col-md-4">
                     <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name" required="name" value="<?php echo $name; ?>">
@@ -201,7 +199,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 </div>
                 
                 <div class="<?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
-                <label class="col-md-2 black" for="fname">Father Name</label>
+                <label class="col-md-2 silver" for="fname">Father Name</label>
                 <div class="col-md-4">
                     <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name" required="fathername" value="<?php echo $fathername; ?>">
                       <span class="help-block"><?php echo $fathername_err;?></span>
@@ -209,7 +207,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 </div>
                 
                 <Div class="<?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
-                    <label class="col-md-2 black" for="contact">Contact</label>
+                    <label class="col-md-2 silver" for="contact">Contact</label>
                 <div class="col-md-4">
                     <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" required="contact" value="<?php echo $contact; ?>">
                       <span class="help-block"><?php echo $contact_err;?></span>
@@ -217,7 +215,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 </div>
                 
                 <div class="<?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
-                  <label class="col-md-2 black" for="cnic">CNIC No</label>
+                  <label class="col-md-2 silver" for="cnic">CNIC No</label>
                 <div class="col-md-4">
                     <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" required="cnic" value="<?php echo $cnic; ?>">
                       <span class="help-block"><?php echo $cnic_err;?></span>
