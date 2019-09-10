@@ -129,8 +129,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       
         <div class="col-md-12">
             <div class="page-header">
-            <h2 class="peru">Create Record</h2>
-            <p class="aqua">Please fill this form and submit to add User record to the database.</p>
+            <h2 class="green">Create Record</h2>
+            <p class="silver">Please fill this form and submit to add User record to the database.</p>
             </div>
                    <br/>
                    

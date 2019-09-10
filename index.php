@@ -61,9 +61,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="green page-header clearfix">
+                    <div class="silver page-header clearfix">
                         <h2 class="pull-left">User's Details</h2>
-                        <a href="create.php" class=" btn btn-success pull-right"><span class="black">ADD New User</span></a>
+                        <a href="create.php" class=" btn btn-success pull-right"><span>ADD New User</span></a>
                     </div>
                     <?php
                     // Include config file
@@ -73,21 +73,21 @@
                     $sql = "SELECT * FROM form";
                     if($result = mysqli_query($connect, $sql)){
                         if(mysqli_num_rows($result) > 0){
-                            echo "<table class=' table table-bordered table-striped table-responsive table-hover'>";
+                            echo "<table class=' table table-bordered  table-responsive table-hover'>";
                                 echo "<thead>";
-                                    echo "<tr style='color:green; background-color:sandybrown;'>";
-                                        echo "<th>Id</th>";
+                                    echo "<tr style='color:black; background-color:sandybrown;'>";
+                                        echo "<th>ID</th>";
                                         echo "<th>Name</th>";
                                         echo "<th>Father-name</th>";
-                                        echo "<th>Contact</th>";
-                                        echo "<th>Cnic</th>";
+                                        echo "<th>Contact no</th>";
+                                        echo "<th>Cnic  no</th>";
                                         echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
-                                    echo "<tr style='background-color:powderblue;'>";
-                                        echo "<td style='color:red'>" . $row['id'] . "</td>";
+                                    echo "<tr style='background-color:darkgray; font-size:18px; font-weight:normal';>";
+                                        echo "<td style='color:brown'>" . $row['id'] . "</td>";
                                         echo "<td style='color:black'>" . $row['name'] . "</td>";
                                         echo "<td style='color:black'>" . $row['fathername'] . "</td>";
                                         echo "<td style='color:black'>" . $row['contact'] . "</td>";
