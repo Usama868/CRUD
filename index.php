@@ -41,7 +41,7 @@
     </script>
     
 </head>
-<body class="container" background="images/fabric1.png">
+<body class="container" style= "background-image:url('images/abstract-art2 (2).jpg'); background-repeat: repeat-y; background-size: cover;">
     <nav class="col-md-6 navmargin">
             
             <div class="">
