@@ -181,9 +181,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
    
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2 class="peru">Update Record</h2>
+                        <h2 class="peru"><I><b>Update Record</b></I></h2>
                   
-                    <p class="aqua">Please edit the input values and submit to update the record.</p>
+                        <p class="aqua"><I>Please edit the input values and submit to update the record.</i></p>
                       </div>
                     <br/>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
