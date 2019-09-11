@@ -122,11 +122,6 @@
             </div>        
         </div>
     </div>
-     <div>     
-        <div class="img-responsive" align="center">
-             
-             <img src="images/copyright.png" class="copyright">
-                        </div>
-        </div>
+   
 </body>
 </html>

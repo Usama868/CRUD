@@ -234,10 +234,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     </form>
                  </div>
                    
-         <div class="img-responsive" align="center">
-             
-             <img src="images/copyright.png" class="copyright">
-                        </div>
+      
     
 </body>
 </html>

@@ -30,11 +30,13 @@ background: linear-gradient(to bottom, black 0%,black 50%,#000000 50%,white 50%,
     
 }
 .copyright{
-  
+   
+ 
     position: relative;
     max-width: 100%;
     max-height: 100%;
-    width: 70%;
+    width: 50%;
+    height: 10px;
         
 }
 
@@ -69,7 +71,7 @@ background: linear-gradient(to bottom, black 0%,black 50%,#000000 50%,white 50%,
 
 .side{
     background-color: forestgreen;
-    color:2px powderblue; 
+    color: 2px powderblue; 
     
 }
 

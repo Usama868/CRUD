@@ -203,12 +203,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       
                     
      
-        <div>     
-        <div class="img-responsive" align="center">
-             
-             <img src="images/copyright.png" class="copyright">
-                        </div>
-        </div>
+      
     </body>
 </html>
  

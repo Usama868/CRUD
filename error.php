@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body class="container" background="images/email-pattern.png">
+<body class="container" style= "background-image:url('images/abstract-art2 (2).jpg'); background-size: cover;">
      <nav class="col-md-6 navmargin">
             
             <div class="">
