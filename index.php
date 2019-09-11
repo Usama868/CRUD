@@ -24,7 +24,8 @@
         </div>
     <style type="text/css">
         .wrapper{
-            width: 950px;
+            width: auto;
+            max-width: 100%;
             margin: 0 auto;
         }
         .page-header h2{
@@ -41,7 +42,7 @@
     </script>
     
 </head>
-<body class="container" style= "background-image:url('images/abstract-art2 (2).jpg'); background-repeat: repeat-y; background-size: cover;">
+<body class="container" style= "background-image:url('images/abstract-art2 (2).jpg'); background-repeat: repeat; background-size: cover;">
     <nav class="col-md-6 navmargin">
             
             <div class="">
