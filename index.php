@@ -74,7 +74,7 @@
                     $sql = "SELECT * FROM form";
                     if($result = mysqli_query($connect, $sql)){
                         if(mysqli_num_rows($result) > 0){
-                            echo "<table class=' table table-responsive'>";
+                            echo "<table class=' table table-bordered table-responsive'>";
                                 echo "<thead>";
                                     echo "<tr style='color:black; background-color:sandybrown;'>";
                                         echo "<th>ID</th>";
