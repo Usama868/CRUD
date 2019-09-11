@@ -55,7 +55,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                   <link rel="stylesheet" type="text/css" href="Css/colors.css">
             <div class="head img-responsive">
            
-            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
+            <img src="images/photog2.png" width="180px" height="180px"  style="max-width: 100%">
          
         </div>
     <title>View Record</title>

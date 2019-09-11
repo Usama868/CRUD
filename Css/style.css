@@ -23,10 +23,10 @@ background: linear-gradient(to bottom, black 0%,black 50%,#000000 50%,white 50%,
     margin-right: 200px;
   
    position: relative;
-   height: 20%;
+  
    
-      max-width: 100%;
-        margin-top: 10px;
+     
+        margin-top: 5px;
     
 }
 .copyright{

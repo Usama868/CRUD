@@ -19,7 +19,7 @@
                   <link rel="stylesheet" type="text/css" href="Css/colors.css">
             <div class="head img-responsive">
            
-            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%;">
+            <img src="images/photog2.png" width="180px" height="180px"  style="max-width: 100%;">
             
         </div>
     <style type="text/css">
@@ -74,28 +74,32 @@
                     $sql = "SELECT * FROM form";
                     if($result = mysqli_query($connect, $sql)){
                         if(mysqli_num_rows($result) > 0){
-                            echo "<table class=' table table-bordered  table-responsive table-hover'>";
+                            echo "<table class=' table table-responsive'>";
                                 echo "<thead>";
                                     echo "<tr style='color:black; background-color:sandybrown;'>";
                                         echo "<th>ID</th>";
                                         echo "<th>Name</th>";
+                                       
                                         echo "<th>Father-name</th>";
                                         echo "<th>Contact no</th>";
                                         echo "<th>Cnic  no</th>";
+                                         
                                         echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
-                                    echo "<tr style='background-color:darkgray; font-size:18px; font-weight:normal';>";
+                                    echo "<tr style='background-color:darkgray;  font-weight:normal';>";
                                         echo "<td style='color:brown'>" . $row['id'] . "</td>";
                                         echo "<td style='color:black'>" . $row['name'] . "</td>";
+                                      
                                         echo "<td style='color:black'>" . $row['fathername'] . "</td>";
                                         echo "<td style='color:black'>" . $row['contact'] . "</td>";
                                         echo "<td style='color:black'>" . $row['cnic'] . "</td>";
+                                        
                                         echo "<td align='center'>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-info glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='btn btn-info glyphicon glyphicon-pencil'></span></a>";
                                             echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='btn btn-danger glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";

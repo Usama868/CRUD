@@ -3,8 +3,8 @@
 require_once "connect.php";
  
 // Define variables and initialize with empty values
-$name= $fathername= $contact = $cnic = "";
-$name_err = $fathername_err = $contact_err = $cnic_err =  "";
+$name= $fathername= $contact = $cnic = $email = "";
+$name_err = $fathername_err = $contact_err = $cnic_err = $email_err =  "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] === "POST"){
@@ -45,21 +45,29 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }  else{
       $cnic = $input_cnic;
     }
+     //email address
+    $input_email = trim($_POST["email"]);
+    if(empty($input_email)){
+        $email_err = "Please enter the  email address.";     
+    }  else{
+      $email = $input_email;
+    }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($fathername_err) && empty($contact_err && empty($cnic_err))){
+    if(empty($name_err) && empty($fathername_err) && empty($contact_err) && empty($cnic_err) && empty($email_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO form (name, fathername, contact,cnic) VALUES (?, ?, ?,?)";
+        $sql = "INSERT INTO form (name, fathername, contact,cnic,email) VALUES (?, ?, ?,?,?)";
          
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_fathername, $param_contact, $param_cnic);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_name, $param_fathername, $param_contact, $param_cnic, $param_email);
             
             // Set parameters
             $param_name = $name;
             $param_fathername = $fathername;
             $param_contact = $contact;
             $param_cnic = $cnic;
+            $param_email = $email;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -99,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                   <link rel="stylesheet" type="text/css" href="Css/colors.css">
             <div class="head img-responsive">
            
-            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
+            <img src="images/photog2.png" width="180px" height="180px"  style="max-width: 100%">
          
         </div>
     
@@ -153,6 +161,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                       <span class="help-block"><?php echo $fathername_err;?></span>
                 </div>
                 </div>
+              
                 
                 <Div class="<?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
                     <label class="col-md-2 silver" for="contact">Contact</label>
@@ -170,6 +179,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                     
                  </div>
                 </div>
+              
                 </div>
                 <div class="btnm">
                 <diV>
