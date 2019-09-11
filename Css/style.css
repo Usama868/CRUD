@@ -20,7 +20,7 @@ background: linear-gradient(to bottom, black 0%,black 50%,#000000 50%,white 50%,
     
     
 .head{
-    
+    margin-right: 200px;
   
    position: relative;
    height: 20%;

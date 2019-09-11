@@ -19,7 +19,7 @@
                   <link rel="stylesheet" type="text/css" href="Css/colors.css">
             <div class="head img-responsive">
            
-            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
+            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%;">
             
         </div>
     <style type="text/css">
@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="silver page-header clearfix">
-                        <h2 class="pull-left">User's Details</h2>
+                        <h2 class="pull-left"><i><b>User's Details</b></i></h2>
                         <a href="create.php" class=" btn btn-success pull-right"><span>ADD New User</span></a>
                     </div>
                     <?php
