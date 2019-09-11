@@ -89,7 +89,7 @@
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
-                                    echo "<tr style='background-color:darkgray;  font-weight:normal';>";
+                                    echo "<tr style='background-color:white;  font-weight:normal';>";
                                         echo "<td style='color:brown'>" . $row['id'] . "</td>";
                                         echo "<td style='color:black'>" . $row['name'] . "</td>";
                                       
