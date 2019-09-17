@@ -46,12 +46,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       $cnic = $input_cnic;
     }
      //email address
-    $input_email = trim($_POST["email"]);
-    if(empty($input_email)){
-        $email_err = "Please enter the  email address.";     
-    }  else{
-      $email = $input_email;
-    }
+   
     
     // Check input errors before inserting in database
     if(empty($name_err) && empty($fathername_err) && empty($contact_err) && empty($cnic_err) && empty($email_err)){

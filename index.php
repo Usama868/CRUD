@@ -76,7 +76,7 @@
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class=' table table-bordered table-responsive'>";
                                 echo "<thead>";
-                                    echo "<tr style='color:black; background-color:sandybrown;'>";
+                                    echo "<tr style='color:orange; background-color:;'>";
                                         echo "<th>ID</th>";
                                         echo "<th>Name</th>";
                                        
@@ -89,13 +89,13 @@
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
-                                    echo "<tr style='background-color:white;  font-weight:normal';>";
-                                        echo "<td style='color:brown'>" . $row['id'] . "</td>";
-                                        echo "<td style='color:black'>" . $row['name'] . "</td>";
+                                    echo "<tr style='background-color:;  font-weight:normal';>";
+                                        echo "<td style='color:white'>" . $row['id'] . "</td>";
+                                        echo "<td style='color:white'>" . $row['name'] . "</td>";
                                       
-                                        echo "<td style='color:black'>" . $row['fathername'] . "</td>";
-                                        echo "<td style='color:black'>" . $row['contact'] . "</td>";
-                                        echo "<td style='color:black'>" . $row['cnic'] . "</td>";
+                                        echo "<td style='color:white'>" . $row['fathername'] . "</td>";
+                                        echo "<td style='color:white'>" . $row['contact'] . "</td>";
+                                        echo "<td style='color:white'>" . $row['cnic'] . "</td>";
                                         
                                         echo "<td align='center'>";
                                             echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-eye-open'></span></a>";
