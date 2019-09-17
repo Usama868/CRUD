@@ -27,6 +27,7 @@
             width: auto;
             max-width: 100%;
             margin: 0 auto;
+           
         }
         .page-header h2{
             margin-top: 0;
@@ -48,8 +49,7 @@
             <div class="">
             <ul class="nav nav-divider nav-pills">
                 <li class="active"><a href="index.php" target="_self">Home</a></li>
-                <li><a href="#" target="_self">ADD</a></li>
-                <li><a href="update.php" target="_self">Update</a></li>
+               
                 
                
                
@@ -74,35 +74,35 @@
                     $sql = "SELECT * FROM form";
                     if($result = mysqli_query($connect, $sql)){
                         if(mysqli_num_rows($result) > 0){
-                            echo "<table class=' table table-bordered table-responsive'>";
+                            echo "<table class='table table-bordered  container table-responsive'>";
                                 echo "<thead>";
-                                    echo "<tr style='color:orange; background-color:;'>";
-                                        echo "<th>ID</th>";
-                                        echo "<th>Name</th>";
+                                    echo "<tr style='color:orange;'>";
+                                        echo "<th style=' text-align: center;'>ID</th>"; 
+                                        echo "<th style=' text-align: center;'>Name</th>";
                                        
-                                        echo "<th>Father-name</th>";
-                                        echo "<th>Contact no</th>";
-                                        echo "<th>Cnic  no</th>";
+                                        echo "<th style=' text-align: center;'>Father-name</th>";
+                                        echo "<th style=' text-align: center;'>Contact no</th>";
+                                        echo "<th style=' text-align: center;'>Cnic  no</th>";
                                          
-                                        echo "<th>Action</th>";
+                                        echo "<th style=' text-align: center;'>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr style='background-color:;  font-weight:normal';>";
-                                        echo "<td style='color:white'>" . $row['id'] . "</td>";
-                                        echo "<td style='color:white'>" . $row['name'] . "</td>";
+                                        echo "<td style='color:white;  text-align: center;'>" . $row['id'] . "</td>";
+                                        echo "<td style='color:white;  text-align: center;'>" . $row['name'] . "</td>";
                                       
-                                        echo "<td style='color:white'>" . $row['fathername'] . "</td>";
-                                        echo "<td style='color:white'>" . $row['contact'] . "</td>";
-                                        echo "<td style='color:white'>" . $row['cnic'] . "</td>";
+                                        echo "<td style='color:white;  text-align: center;'>" . $row['fathername'] . "</td>";
+                                        echo "<td style='color:white;  text-align: center;'>" . $row['contact'] . "</td>";
+                                        echo "<td style='color:white;  text-align: center;'>" . $row['cnic'] . "</td>";
                                         
-                                        echo "<td align='center'>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='btn btn-info glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='btn btn-danger glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
-                                    echo "</tr>";
+                             echo "<td align='center'>";
+                          echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='btn btn-success glyphicon glyphicon-eye-open'></span></a>";
+                         echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='btn btn-info glyphicon glyphicon-pencil'></span></a>";
+                          echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='btn btn-danger glyphicon glyphicon-trash'></span></a>";
+                            echo "</td>";
+                          echo "</tr>";
                                 }
                                 echo "</tbody>";                            
                             echo "</table>";
